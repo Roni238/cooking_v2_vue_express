@@ -32,11 +32,11 @@
             </ul>
         </section>
 
-        <h3>Комментарии:</h3>
+        <h3 :style="{color:getCurrentStyle?.itemColor}">Комментарии:</h3>
         <div class="comments">
-            <create-new-comment v-if="getUser.isActivated==true"/>
-            <h4 v-else>Зарегестрируйтесь чтобы оставлять комментарии</h4>
-            <comment-list/>
+            <create-new-comment v-if="getUser.isActivated==true" :style="{color:getCurrentStyle?.itemColor}"/>
+            <h4 v-else :style="{color:getCurrentStyle?.itemColor}">Зарегестрируйтесь чтобы оставлять комментарии</h4>
+            <comment-list :style="{color:getCurrentStyle?.itemColor}"/>
         </div>
         
     </div>
