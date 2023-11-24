@@ -55,7 +55,7 @@ class PostService {
         return randomPost
     }
     async findPost(searchQuery='Капучино'){
-        const searchPosts = await PostModel.find({title:searchQuery})
+        const searchPosts = await PostModel.find({title: { $regex: new RegExp(searchQuery,'i') }})
         return searchPosts
     }
 }
